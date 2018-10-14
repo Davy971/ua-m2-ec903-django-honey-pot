@@ -1,28 +1,58 @@
 {% load static %}
 <html>
     <head>
-        <title>Django HoneyPot</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-Edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta name="keywords" content="">
+        <meta name="description" content="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <title>Django HoneyPot</title>
 
     </head>
     <body>
-        <div class="page-header">
+      <div class="container">
+              <nav class="navbar navbar-light bg-faded">
+              <a class="navbar-brand" href="#">Menu</a>
+              <ul class="nav navbar-nav">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Categorie</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Activité</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Contact</a>
+                </li>
+              </ul>
+              <form class="form-inline pull-xs-right">
+                <input class="form-control" type="text" placeholder="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+              </form>
+              </nav>
 
-        </div>
-        <div class="content container">
-            <div class="row">
-                <div class="col-md-8">
+              <div class="content container">
+                  <div class="row">
+                      <div class="col-md-8">
 
-                  <h1>Authentification</h1>
-                  <form method="POST" class="post-form">{% csrf_token %}
-                      {{ form.as_p }}
-                      <button type="submit" class="save btn btn-default">Save</button>
-                  </form>
+                        <h1>Authentification</h1>
+                        <form method="POST" class="post-form">{% csrf_token %}
+                            {{ form.as_p }}
+                            <button type="submit" class="save btn btn-default">Save</button>
+                        </form>
 
-                </div>
-            </div>
-        </div>
+                      </div>
+                  </div>
+              </div>
+      </div>
+
+
+
+
     </body>
 </html>
