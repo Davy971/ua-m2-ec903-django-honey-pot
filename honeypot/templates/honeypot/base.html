@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <title>Django HoneyPot</title>
 
     </head>
@@ -27,7 +28,7 @@
                   <a class="nav-link" href="#">Activité</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Contact</a>
+                  <a class="nav-link" href="{% url 'honeypot_contact' %}">Contact</a>
                 </li>
               </ul>
               <form class="form-inline pull-xs-right">
@@ -45,10 +46,30 @@
                 </div>
 
               </div>
+
+
+
+              <style>
+                .footer {
+                    position: fixed;
+                    left: 0;
+                    bottom: 0;
+                    width: 100%;
+                    background-color: black;
+                    color: white;
+                    text-align: center;
+                }
+              </style>
+              <div class="footer">
+                <div class="container">
+                  <div class="row">
+                    <a class="col-lg-3 col-lg-offset-1" href="#">Conditions d'utilisations</a>
+                    <a class="col-lg-3 col-lg-offset-1" href="#">Données personnelles et mention légales</a>
+                    <a class="col-lg-3" href="{% url 'honeypot_contact' %}"> Contacter Nous </a>
+                  </div>
+                </div>
+              </div>
+
       </div>
-
-
-
-
     </body>
 </html>
