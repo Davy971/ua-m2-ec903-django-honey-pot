@@ -29,3 +29,15 @@ def contacter(request):
 
 def redir(request):
 	return render (request,'honeypot/redir.html')
+
+def mention(request):
+	title="Mention Légale"
+	return render(request,'honeypot/paper.html',{'title':title})
+
+def  dnsPerso(request):
+	title="Données Personnelles"
+	return render(request,'honeypot/paper.html',{'title':title})
+
+def condition(request):
+	title="Condition d'utilisations"
+	return render(request,'honeypot/paper.html',{'title':title})
