@@ -1,9 +1,8 @@
 {% extends 'honeypot/base.html' %}
 {% load crispy_forms_tags %}
 {% block content %}
-
-
-
+<br/>
+<br/>
       <h1>Bienvenue Sur My HoneyPot</h1>
       <form method="POST" class="post-form">{% csrf_token %}
           {{ form|crispy }}
