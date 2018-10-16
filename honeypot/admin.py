@@ -1,7 +1,14 @@
 from django.contrib import admin
 from .models import Utilisateur,Contact
 
-admin.site.register(Utilisateur)
-admin.site.register(Contact)
 
-# Register your models here.
+
+@admin.register(Contact)
+class ContactAdmin(admin.ModelAdmin):
+    list_display = ['adr_ip', 'date']
+    ordering = ['date']
+
+@admin.register(Utilisateur)
+class UtilisateurAdmin(admin.ModelAdmin):
+    list_display = ['adr_ip', 'date']
+    ordering = ['date']
