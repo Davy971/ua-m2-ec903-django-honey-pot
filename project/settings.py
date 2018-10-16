@@ -61,6 +61,7 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
+                'django_settings_export.settings_export',
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
@@ -68,6 +69,10 @@ TEMPLATES = [
             ],
         },
     },
+]
+KEY_GOOGLE_ANALITIC='xxxxxxxxxxxxx'
+SETTINGS_EXPORT = [
+    'KEY_GOOGLE_ANALITIC',
 ]
 
 WSGI_APPLICATION = 'project.wsgi.application'
