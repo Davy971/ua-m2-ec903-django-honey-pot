@@ -8,7 +8,11 @@ def login(request):
 	if request.method== "POST" :
 		if form.is_valid():
 			user=form.save(commit=False)
-			user.adr_ip= request.META['REMOTE_ADDR']
+			x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+			if x_forwarded_for:
+				user.adr_ip = x_forwarded_for.split(',')[0]
+			else:
+				user.adr_ip = request.META.get('REMOTE_ADDR')
 			user.user_agent=request.META['HTTP_USER_AGENT']
 			user.save()
 			return redirect('../redir')
@@ -20,7 +24,11 @@ def contacter(request):
 	if request.method== "POST" :
 		if form.is_valid():
 			contact=form.save(commit=False)
-			contact.adr_ip=request.META['REMOTE_ADDR']
+			x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+			if x_forwarded_for:
+				contact.adr_ip = x_forwarded_for.split(',')[0]
+			else:
+				contact.adr_ip = request.META.get('REMOTE_ADDR')
 			contact.user_agent=request.META['HTTP_USER_AGENT']
 			contact.save()
 			return redirect('../redir')
@@ -32,12 +40,12 @@ def redir(request):
 
 def mention(request):
 	title="Mention Légale"
-	return render(request,'honeypot/paper.html',{'title':title})
+	return render(request,'honeypot/paper1.html')
 
 def  dnsPerso(request):
 	title="Données Personnelles"
-	return render(request,'honeypot/paper.html',{'title':title})
+	return render(request,'honeypot/paper2.html')
 
 def condition(request):
 	title="Condition d'utilisations"
-	return render(request,'honeypot/paper.html',{'title':title})
+	return render(request,'honeypot/paper3.html')
