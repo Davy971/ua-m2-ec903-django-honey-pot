@@ -2,11 +2,12 @@ from django import forms
 from .models import Utilisateur,Contact
 
 class UtilisateurForm(forms.ModelForm) :
-
-	password= forms.CharField(widget=forms.PasswordInput)
 	class Meta :
 		model= Utilisateur
 		fields = ('login', 'password',)
+		widgets={
+		'password': forms.PasswordInput(),
+		}
 
 class ContactForm(forms.ModelForm):
 	class Meta :
