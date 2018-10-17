@@ -1,3 +1,5 @@
+info: Nécessiter d'être connecté à internet pour appel de boostrap dans balise script et link pour le design du site
+
 Utilisation classique:
 
 1. Activer son virtualenv avec: sourve venv/bin/activate
